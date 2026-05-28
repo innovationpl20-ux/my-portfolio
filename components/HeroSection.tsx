@@ -66,8 +66,26 @@ export default function HeroSection() {
       />
 
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
-        {/* 좌측 텍스트 */}
-        <div className="flex w-full flex-col items-center gap-8 text-center lg:items-start lg:text-left">
+        {/* 아바타 — 모바일·태블릿 최상단, 데스크톱 우측 */}
+        <BlurFade
+          delay={0.15}
+          duration={0.5}
+          className="order-1 shrink-0 lg:order-2"
+        >
+          <Image
+            src="/avatar.png"
+            alt="minee 아바타"
+            width={260}
+            height={260}
+            priority
+            unoptimized
+            sizes="(max-width: 1024px) 144px, 260px"
+            className="size-36 drop-shadow-xl lg:size-[260px]"
+          />
+        </BlurFade>
+
+        {/* 텍스트 */}
+        <div className="order-2 flex w-full flex-col items-center gap-8 text-center lg:order-1 lg:items-start lg:text-left">
           <BlurFade delay={0.1} duration={0.5}>
             <span className="inline-flex w-fit items-center rounded-full border border-pink-200 bg-pink-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#ff4da6]">
               Project Manager
@@ -97,20 +115,6 @@ export default function HeroSection() {
             </div>
           </BlurFade>
         </div>
-
-        {/* 아바타 — 모든 화면 크기에서 표시 */}
-        <BlurFade delay={0.3} duration={0.5} className="shrink-0">
-          <Image
-            src="/avatar.png"
-            alt="minee 아바타"
-            width={260}
-            height={260}
-            priority
-            unoptimized
-            sizes="(max-width: 1024px) 144px, 260px"
-            className="size-36 drop-shadow-xl lg:size-[260px]"
-          />
-        </BlurFade>
       </div>
 
       <ScrollHint />
