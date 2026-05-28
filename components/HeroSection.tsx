@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import ScrollHint from "@/components/ScrollHint";
 import { BlurFade } from "@/components/ui/blur-fade";
 
 const SPOT_SIZE = 600;
@@ -110,6 +111,8 @@ export default function HeroSection() {
           />
         </BlurFade>
       </div>
+
+      <ScrollHint />
     </section>
   );
 }
