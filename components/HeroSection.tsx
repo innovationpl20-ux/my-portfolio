@@ -64,9 +64,22 @@ export default function HeroSection() {
         className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-b from-transparent to-background md:h-48"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-3xl items-center justify-between gap-12">
-        {/* 좌측 텍스트 */}
-        <div className="flex flex-col gap-8">
+      <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center gap-8 text-center md:flex-row md:items-center md:justify-between md:gap-12 md:text-left">
+        {/* 모바일: 아바타를 상단에 표시 */}
+        <BlurFade delay={0.15} duration={0.5} className="shrink-0 md:hidden">
+          <Image
+            src="/avatar.png"
+            alt="minee 아바타"
+            width={160}
+            height={160}
+            priority
+            unoptimized
+            className="drop-shadow-xl"
+          />
+        </BlurFade>
+
+        {/* 텍스트 */}
+        <div className="flex flex-col items-center gap-6 md:items-start md:gap-8">
           <BlurFade delay={0.1} duration={0.5}>
             <span className="inline-flex w-fit items-center rounded-full border border-pink-200 bg-pink-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#ff4da6]">
               Project Manager
@@ -74,19 +87,19 @@ export default function HeroSection() {
           </BlurFade>
 
           <BlurFade delay={0.25} duration={0.5}>
-            <h1 className="bg-gradient-to-r from-[#ff4da6] via-[#9b59b6] to-[#4361ee] bg-clip-text text-7xl font-extrabold leading-none text-transparent md:text-9xl">
+            <h1 className="bg-gradient-to-r from-[#ff4da6] via-[#9b59b6] to-[#4361ee] bg-clip-text text-5xl font-extrabold leading-none text-transparent sm:text-7xl md:text-9xl">
               minee
             </h1>
           </BlurFade>
 
           <BlurFade delay={0.4} duration={0.5}>
-            <p className="max-w-md text-xl leading-relaxed text-[#706e8a] md:text-2xl">
+            <p className="max-w-xs text-lg leading-relaxed text-[#706e8a] sm:max-w-md sm:text-xl md:text-2xl">
               제품의 여정을 따라가는 프로젝트 매니저
             </p>
           </BlurFade>
 
           <BlurFade delay={0.55} duration={0.5}>
-            <div className="mt-2">
+            <div className="mt-1 md:mt-2">
               <a
                 href="mailto:minyi.park@samsung.com"
                 className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#ff4da6] to-[#9b59b6] px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-pink-200 transition-opacity hover:opacity-90"
@@ -97,7 +110,7 @@ export default function HeroSection() {
           </BlurFade>
         </div>
 
-        {/* 우측 아바타 */}
+        {/* 데스크톱: 우측 아바타 */}
         <BlurFade delay={0.3} duration={0.5} className="hidden shrink-0 md:block">
           <Image
             src="/avatar.png"

@@ -81,7 +81,7 @@ export default function ContactSection() {
     <section
       id="contact"
       aria-label="Contact"
-      className="px-6 pb-24 pt-8 md:px-12 md:pt-12"
+      className="px-6 pb-32 pt-8 md:px-12 md:pb-24 md:pt-12"
     >
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-10">
         <header className="flex flex-col gap-5">
