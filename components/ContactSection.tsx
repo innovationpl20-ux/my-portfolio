@@ -81,7 +81,7 @@ export default function ContactSection() {
     <section
       id="contact"
       aria-label="Contact"
-      className="px-6 pb-32 pt-8 md:px-12 md:pb-24 md:pt-12"
+      className="px-6 pb-24 pt-8 md:px-12 md:pt-12"
     >
       <div className="mx-auto flex w-full max-w-3xl flex-col gap-10">
         <header className="flex flex-col gap-5">
@@ -102,7 +102,7 @@ export default function ContactSection() {
         <BlurFade inView delay={0.32} duration={0.5}>
           <MagicCard {...cardProps} className="rounded-2xl">
             <form
-              className="flex flex-col gap-5 p-6 md:p-8"
+              className="flex flex-col gap-4 p-4 sm:gap-5 sm:p-6 md:p-8"
               onSubmit={handleSubmit}
             >
               <input
