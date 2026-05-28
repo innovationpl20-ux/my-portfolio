@@ -36,7 +36,7 @@ export default function HeroSection() {
       ref={sectionRef}
       id="hero"
       aria-label="Hero"
-      className="relative flex min-h-screen items-center overflow-hidden px-6 py-24 md:px-12"
+      className="relative flex min-h-screen items-center overflow-x-clip px-6 py-24 md:px-12"
       style={{
         backgroundImage: "url('/hero-bg.png')",
         backgroundSize: "cover",
@@ -65,9 +65,9 @@ export default function HeroSection() {
         className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-40 bg-gradient-to-b from-transparent to-background md:h-48"
       />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-3xl items-center justify-between gap-12">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
         {/* 좌측 텍스트 */}
-        <div className="flex flex-col gap-8">
+        <div className="flex w-full flex-col items-center gap-8 text-center lg:items-start lg:text-left">
           <BlurFade delay={0.1} duration={0.5}>
             <span className="inline-flex w-fit items-center rounded-full border border-pink-200 bg-pink-50 px-4 py-1 text-xs font-bold uppercase tracking-widest text-[#ff4da6]">
               Project Manager
@@ -98,8 +98,8 @@ export default function HeroSection() {
           </BlurFade>
         </div>
 
-        {/* 우측 아바타 */}
-        <BlurFade delay={0.3} duration={0.5} className="hidden shrink-0 md:block">
+        {/* 아바타 — 모든 화면 크기에서 표시 */}
+        <BlurFade delay={0.3} duration={0.5} className="shrink-0">
           <Image
             src="/avatar.png"
             alt="minee 아바타"
@@ -107,7 +107,8 @@ export default function HeroSection() {
             height={260}
             priority
             unoptimized
-            className="drop-shadow-xl"
+            sizes="(max-width: 1024px) 144px, 260px"
+            className="size-36 drop-shadow-xl lg:size-[260px]"
           />
         </BlurFade>
       </div>
